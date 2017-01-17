@@ -37,6 +37,7 @@ function Route (app, routes) {
 
     // routes specific to next.js
     if (pathname === '/__webpack_hmr') return handler(req, res)
+    if (pathname.slice(0, 10) === '/_webpack/') return handler(req, res)
     if (pathname.slice(0, 7) === '/_next/') return handler(req, res)
 
     // perform the routing
