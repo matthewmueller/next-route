@@ -1,7 +1,7 @@
 {
   "name": "next-route",
   "version": "1.0.0",
-  "description": "routing sugar for next.js for the 99% case",
+  "description": "Routing sugar for next.js for the 99% case",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
