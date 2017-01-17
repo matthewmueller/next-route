@@ -33,7 +33,10 @@ This map will be pulled in from your package.json, or you can bring it in yourse
   }
 ```
 
-This routing map uses the same logic and low-level module as express's routing.
+Things to note:
+
+- The routing map uses the same logic and low-level module as express's routing. 
+- Any parameters resolved by the routing (e.g. ":post") will be passed into `getInitialProps` as query parameters
 
 ## Installation
 
