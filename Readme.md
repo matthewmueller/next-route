@@ -19,6 +19,22 @@ app.prepare().then(() => {
 })
 ```
 
+## Specifying Routes
+
+This map will be pulled in from your package.json, or you can bring it in yourself by doing `route(app, require('package.json').customRoutes)`.
+
+```json
+"routes": {
+    "/": "/landing",
+    "/:date/:post": "/blogpost",
+    "/:post": "/blogpost",
+    "/about": "/about",
+    "/404": "/404",
+  }
+```
+
+This routing map uses the same logic and low-level module as express's routing.
+
 ## Installation
 
 ```sh
