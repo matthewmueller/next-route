@@ -1,6 +1,6 @@
 {
   "name": "next-route",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Routing sugar for next.js for the 99% case",
   "main": "index.js",
   "scripts": {

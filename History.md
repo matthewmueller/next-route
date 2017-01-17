@@ -1,4 +1,9 @@
 
+1.0.2 / 2017-01-17
+==================
+
+  * support query parameters in the resolved routes e.g. /signup: /signup?step=1
+
 1.0.1 / 2017-01-17
 ==================
 
