@@ -30,6 +30,7 @@ var pkg = path.join(process.cwd(), 'package.json')
 function Route (app, routes) {
   routes = routes || require(pkg).routes || {}
   var handler = app.getRequestHandler()
+  var routing = buildRoutes(routes)
   return function route (req, res) {
     var url = URL.parse(req.url, true)
     var pathname = url.pathname
@@ -44,14 +45,27 @@ function Route (app, routes) {
     for (var route in routes) {
       var m = match(route, params, pathname)
       if (m) {
-        var query = assign(params, url.query)
-        return app.render(req, res, routes[route], query)
+        var r = routing[route]
+        var query = assign(params, r.query || {}, url.query)
+        return app.render(req, res, r.pathname, query)
       }
     }
 
     // pass the rest of the requests through next's handler
     handler(req, res)
   }
+}
+
+/**
+ * Build routes
+ */
+
+function buildRoutes (routes) {
+  var routing = {}
+  for (var route in routes) {
+    routing[route] = URL.parse(routes[route], true)
+  }
+  return routing
 }
 
 /**
